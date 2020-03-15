@@ -1,7 +1,14 @@
-# 문자열 내 p, y 개수
+# Lambda Expressions
+
+- java8 버전부터 지원
+- 익명함수를 생성하기 위한 식, 객체지향보다 함수지향에 가깝다
+- 함수형 프로그래밍은 병렬처리와 이벤트지향 프로그래밍에 적합하여 딥러닝에서 관심
 
 ```java
-boolean Solution(String s) {
+/*
+* 문자열 내 p, y 개수
+*/
+boolean solution(String s) {
 	        boolean answer = true;
 	        int p=0; int y=0;
 	        
@@ -14,19 +21,12 @@ boolean Solution(String s) {
 	        
 	        return answer;
 	    }
-```
 
-```java
-boolean solution(String s) {
+boolean solution2(String s) {
         s = s.toUpperCase();
         return s.chars().filter( e -> 'P'== e).count() == s.chars().filter( e -> 'Y'== e).count();
 }
 ```
-
-* 람다식 Lambda Expressions
-  * java8 버전부터 지원
-  * 익명함수를 생성하기 위한 식, 객체지향보다 함수지향에 가깝다
-  * 함수형 프로그래밍은 병렬처리와 이벤트지향 프로그래밍에 적합하여 딥러닝에서 관심
 
 ```java
 class Sample {
@@ -77,20 +77,4 @@ Thread t = new Thread( ()-> {
 	}
 })
 ```
-
-* String.charAt(n) 0부터
-
-* String.chars()
-
-  ```java
-  /* java7 */
-  for(int i =0; i<str.length(); i++)
-  	System.out.println(str.charAt(i));
-  	
-  /* java8 */
-  str.chars().forEach(i -> System.out.println((char)i));
-  ```
-
-* String.toLowerCase()
-* String.toUpperCase()
 
